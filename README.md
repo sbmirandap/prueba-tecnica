@@ -1,15 +1,6 @@
 # Instalación de repositorio
 
-Al descargar esta app, basta con correr `npm install`, en donde se instalarán todas las dependencias necesarias.
-Recomendamos fuertemente usar NVM y escoger node 20.
-Además de esto se utilizará una librería de testing llamada PlayWright, en donde sus dependencias se instalan
-así: 
-- `npm init playwright@latest` (https://playwright.dev/docs/intro)
-
-Si se requiere alguna dependencia todavía para correr los tests, bastaría con el comando:
- `npx playwright install-deps` , que es solamente soportado para MacOS y Ubuntu. Si tienes
- otra distrubición de Linux probablemente necesites algunos pasos extra para la instalación 
- de dependencias.
+Al descargar esta app, basta con correr `npm install`, en donde se instalarán todas las dependencias necesarias. Recomendamos fuertemente usar NVM y escoger node 20.
 
 ## Evaluación
 
@@ -25,7 +16,16 @@ aquellos de una librería de estilos que está instalada en este repo (MUI, ver�
 - Existen puntos extras por:
   - Modularización de componentes
   - Routeo
-  - testing
+  - Testing
+
+# Testing
+ Se utilizará una librería de testing llamada PlayWright, en donde sus dependencias se instalan
+así (NO sobreescribir los archivos ya existentes):
+- `npx playwright install`
+- `npx playwright install-deps`
+- `npm init playwright@latest` (https://playwright.dev/docs/intro)
+
+El comando  `npx playwright install-deps` es para instalar las dependencias de playwright, que es solamente soportado para MacOS y Ubuntu. Si tienes otra distrubición de Linux probablemente necesites algunos pasos extra para la instalación de dependencias.
 
 
 Deberás subir tu desarrollo a este mismo repositorio
