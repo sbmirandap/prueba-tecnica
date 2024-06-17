@@ -10,7 +10,8 @@ por nosotros. El requerimiento será mostrar en esta aplicación web la informac
 modo de Marketplace, en donde podrás utilizar componentes creados por tí (o sea HTML y CSS) o bien utilizar
 aquellos de una librería de estilos que está instalada en este repo (MUI, verás un link en el componente principal y algunos ejemplos de implementación de componentes).
 
-- Aquí hay un ejemplo de una API pública (https://www.sampleapis.com/api-list/futurama)
+- Aquí un guía básica visual de de cómo queremos que presentes la información ([Draw.io](https://drive.google.com/file/d/1WQG5JDl8qXfW7sdheUX-y_qjENrGj4al/view?usp=sharing))
+- Aquí hay un ejemplo de una API pública ([Api futurama](https://www.sampleapis.com/api-list/futurama)) con imágenes, en la seccion "characters"
 - Puedes instalar otras librerias si lo estimas conveniente
 - Para iniciar la app en modo desarrollador basta el comando `npm run start`
 - Existen puntos extras por:
@@ -23,9 +24,8 @@ aquellos de una librería de estilos que está instalada en este repo (MUI, ver�
 así (NO sobreescribir los archivos ya existentes):
 - `npx playwright install`
 - `npx playwright install-deps`
-- `npm init playwright@latest` (https://playwright.dev/docs/intro)
 
-El comando  `npx playwright install-deps` es para instalar las dependencias de playwright, que es solamente soportado para MacOS y Ubuntu. Si tienes otra distrubición de Linux probablemente necesites algunos pasos extra para la instalación de dependencias.
+El comando  `npx playwright install-deps` es para instalar las dependencias de playwright, que es solamente soportado para MacOS y Ubuntu. Si tienes otra distrubición de Linux probablemente necesites algunos pasos extra para la instalación de dependencias. Algunas librerías que te podrían faltar podrían ser las siguientes: `enchant`, `icu`, `libwebp` y/o `libffi7`
 
 
 Deberás subir tu desarrollo a este mismo repositorio
