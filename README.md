@@ -15,6 +15,7 @@ aquellos de una librería de estilos que está instalada en este repo (MUI, ver�
 - Puedes instalar otras librerias si lo estimas conveniente
 - Para iniciar la app en modo desarrollador basta el comando `npm run start`
 - Existen puntos extras por:
+  - Diseño
   - Modularización de componentes
   - Routeo
   - Testing
