@@ -28,6 +28,8 @@ así (NO sobreescribir los archivos ya existentes):
 
 El comando  `npx playwright install-deps` es para instalar las dependencias de playwright, que es solamente soportado para MacOS y Ubuntu. Si tienes otra distrubición de Linux probablemente necesites algunos pasos extra para la instalación de dependencias. Algunas librerías que te podrían faltar podrían ser las siguientes: `enchant`, `icu`, `libwebp` y/o `libffi7`
 
+Finalmente, para correr ejecutar los tests basta el comando `npx playwright test` o con interfaz gráfica `npx playwright test --ui`
+
 
 Deberás subir tu desarrollo a este mismo repositorio
 
