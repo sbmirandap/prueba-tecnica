@@ -31,7 +31,7 @@ El comando  `npx playwright install-deps` es para instalar las dependencias de p
 Finalmente, para correr ejecutar los tests basta el comando `npx playwright test` o con interfaz gráfica `npx playwright test --ui`
 
 
-Deberás subir tu desarrollo a este mismo repositorio
+Deberás subir tu desarrollo a un repositorio público que deberás compartir para su evaluación (Puedes hacer un fork de este repo, es más simple)
 
 
 Happy coding!
