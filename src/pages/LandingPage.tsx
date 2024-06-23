@@ -38,7 +38,7 @@ export default function LandingPage() {
 
           <Button
             component={Link}
-            to="/main"
+            to="/characters"
             className={classes.button}
             variant="contained"
           >

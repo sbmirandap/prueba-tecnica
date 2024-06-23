@@ -1,4 +1,6 @@
 export default interface CardProps {
+    id: number,
+    character: Character,
     imgSrc: string,
     imgAlt: string,
     title: string,
@@ -7,9 +9,12 @@ export default interface CardProps {
 
 export interface Character {
     id: number,
-    name: { first: string, middle: string, last: string},
-    images: { main: string }
+    name: { first: string, middle?: string, last: string},
+    images: { main: string },
+    age: number,
     gender: string,
     species: string,
-    homePlanet: string
+    occupation: string
+    homePlanet: string,
+    sayings: string[],
 }

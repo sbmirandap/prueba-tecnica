@@ -1,0 +1,50 @@
+.header {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-bottom: 25px;
+}
+
+.mainContent {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.leftContent {
+    margin-left: 50px;
+    width: 50%;
+    height: 80%
+}
+
+.rightContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 50%;
+    height: 80%
+}
+
+.charImg {
+    height: 80vh;
+}
+
+.icon:hover {
+    cursor: pointer;
+}
+
+.titleContainer {
+
+}
+
+h1 {
+    color: #333333;
+    font-size: 4rem;
+    margin: 0px;
+}
+
+p {
+    color: #333333;
+}
