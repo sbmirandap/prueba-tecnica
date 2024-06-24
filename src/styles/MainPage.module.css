@@ -4,3 +4,7 @@
     gap: 16px; /* Space between cards */
     padding: 16px; /* Padding around the grid */
 }
+
+h1 {
+    font-family: 'Orbitron', sans-serif;
+}

@@ -1,7 +1,9 @@
 import React from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { FaArrowLeft } from 'react-icons/fa6';
+import { Button } from '@mui/material';
 import styles from '../styles/CharacterPage.module.css';
+import randomPicker from '../utils/random';
 
 export default function CharacterPage() {
   const { state } = useLocation();
@@ -21,6 +23,11 @@ export default function CharacterPage() {
   const charName = `${name.first} ${name.middle} ${name.last}`;
   let newSpecies = species;
   let newHomePlanet = homePlanet;
+  let pronoun = 'his';
+
+  if (gender === 'Female') {
+    pronoun = 'her';
+  }
 
   if (!species || species === 'undefined') {
     newSpecies = 'Unknown';
@@ -29,8 +36,14 @@ export default function CharacterPage() {
     newHomePlanet = 'Unknown';
   }
 
+  const selectedSayings = randomPicker(sayings, 3);
+
   const handleGoBack = () => {
     navigate(-1);
+  };
+
+  const goToFuturamaWiki = () => {
+    window.open('https://en.wikipedia.org/wiki/Futurama', '_blank');
   };
 
   return (
@@ -49,18 +62,44 @@ export default function CharacterPage() {
             </h1>
           </div>
           <div className={styles.description}>
-            <p>
-              {`Planet: ${newHomePlanet}`}
-            </p>
-            <p>
-              {`Species: ${newSpecies}`}
-            </p>
-            <p>
-              {`Gender: ${gender}`}
-            </p>
-            <p>
-              {`Occupation: ${occupation}`}
-            </p>
+            <div className={styles.infoSection}>
+              <span className={styles.title}>Planet:</span>
+              <span className={styles.value}>{newHomePlanet}</span>
+            </div>
+            <div className={styles.infoSection}>
+              <span className={styles.title}>Species:</span>
+              <span className={styles.value}>{newSpecies}</span>
+            </div>
+            <div className={styles.infoSection}>
+              <span className={styles.title}>Gender:</span>
+              <span className={styles.value}>{gender}</span>
+            </div>
+            <div className={styles.infoSection}>
+              <span className={styles.title}>Occupation:</span>
+              <span className={styles.value}>{occupation}</span>
+            </div>
+          </div>
+          <div className={styles.sayingsContainer}>
+            {/* <div className={styles.sayingsTitle}> */}
+            <h2 className={styles.sayingsTitle}>
+              {`Some of ${pronoun} sayings`}
+            </h2>
+            {/* </div> */}
+            <div className={styles.sayings}>
+              {selectedSayings.map((str, index) => (
+                <div className={styles.saying}>{str}</div>
+              ))}
+            </div>
+          </div>
+          <div className={styles.buttonsContainer}>
+            <Button
+              onClick={goToFuturamaWiki}
+              color="secondary"
+              className={styles.button}
+              variant="contained"
+            >
+              Más Sobre Futurama
+            </Button>
           </div>
         </div>
       </div>
