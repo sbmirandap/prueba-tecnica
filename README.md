@@ -11,7 +11,7 @@ modo de Marketplace, en donde podrás utilizar componentes creados por tí (o se
 aquellos de una librería de estilos que está instalada en este repo (MUI, verás un link en el componente principal y algunos ejemplos de implementación de componentes).
 
 - Aquí un guía básica visual de de cómo queremos que presentes la información ([Draw.io](https://drive.google.com/file/d/1WQG5JDl8qXfW7sdheUX-y_qjENrGj4al/view?usp=sharing))
-- Aquí hay un ejemplo de una API pública ([Api futurama](https://www.sampleapis.com/api-list/futurama)) con imágenes, en la seccion "characters"
+- Aquí hay un ejemplo de una API pública ([Api futurama](https://www.sampleapis.com/api-list/futurama)) con imágenes, en la seccion "characters", aunque puedes utilizar cualquiera de esta lista ([Api List](https://www.sampleapis.com/api-list))
 - Puedes instalar otras librerias si lo estimas conveniente
 - Para iniciar la app en modo desarrollador basta el comando `npm run start`
 - Existen puntos extras por:
@@ -19,6 +19,9 @@ aquellos de una librería de estilos que está instalada en este repo (MUI, ver�
   - Modularización de componentes
   - Routeo
   - Testing
+  - Creatividad
+  - Uso de ramas
+  - Poder seleccionar elementos, quitarlos de la vista y poder resetear la vista
 
 # Testing
  Se utilizará una librería de testing llamada PlayWright, en donde sus dependencias se instalan
