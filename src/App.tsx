@@ -10,12 +10,10 @@ function App() {
   return (
 
     <Router>
-      {/* Envolver la aplicación dentro de BrowserRouter */}
       <div className="App">
         <Navbar />
         <div className={classes.marketplaceContainer}>
           <Routes>
-            {/* Define las rutas de la aplicación */}
             <Route path="/" element={<Marketplace />} />
           </Routes>
         </div>
