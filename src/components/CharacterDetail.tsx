@@ -50,9 +50,28 @@ export default function CharacterDetail({ character, onClose }: CharacterDetailP
           </Grid>
 
           {/* Columna de detalles */}
-          <Grid item xs={12} md={6} style={{ }}>
-            <CardContent>
-              <Typography variant="h4" gutterBottom>
+          <Grid
+            item
+            xs={12}
+            md={6}
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'center',
+            }}
+          >
+            <CardContent style={{ flexGrow: 1 }}>
+              <Typography
+                variant="h4"
+                gutterBottom
+                sx={{
+                  fontWeight: 500,
+                  color: '#FF007F',
+                  textAlign: 'center',
+                  borderBottom: '1px solid',
+                  borderBottomColor: '#011c3a',
+                }}
+              >
                 {`${character.name.first} ${character.name.middle ? `${character.name.middle} ` : ''}${character.name.last}`}
               </Typography>
               <Typography variant="body2" color="textSecondary" gutterBottom>
@@ -67,7 +86,18 @@ export default function CharacterDetail({ character, onClose }: CharacterDetailP
               <Typography variant="body2" color="textSecondary" gutterBottom>
                 {`Edad: ${character.age}`}
               </Typography>
-              <Button onClick={onClose} style={{ marginTop: '20px', backgroundColor: '#011c3a', color: '#fff' }}>
+              <Button
+                variant="outlined"
+                onClick={() => onClose()}
+                sx={{
+                  marginTop: 'auto',
+                  marginLeft: '150px',
+                  alignItems: 'center',
+                  backgroundColor: '#011c3a',
+                  color: '#fff',
+                  borderColor: '#FF007F',
+                }}
+              >
                 Cerrar
               </Button>
             </CardContent>
