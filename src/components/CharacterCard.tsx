@@ -6,7 +6,7 @@ import {
 import { CharacterCardProps } from '../types/types';
 
 export default function CharacterCard({ character, onClick }: CharacterCardProps) {
-  const [imageSrc, setImageSrc] = useState(character.images.main);
+  const [imageSrc] = useState(character.images.main);
   const handleClick = () => {
     onClick(character);
   };
