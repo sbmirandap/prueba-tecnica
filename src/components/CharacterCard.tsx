@@ -1,15 +1,9 @@
-import React, {
-  useState, useEffect,
-} from 'react';
+import React, { useState } from 'react';
 import {
   Card, CardContent, Typography, CardMedia,
 } from '@mui/material';
-import {
-  FuturamaCharacter,
-  CharacterCardProps,
-} from '../types/types';
-import avatarExcited from '../assets/avatar_excited.svg';
-import avatarHappy from '../assets/avatar_smiling.svg';
+
+import { CharacterCardProps } from '../types/types';
 
 export default function CharacterCard({ character, onClick }: CharacterCardProps) {
   const [imageSrc, setImageSrc] = useState(character.images.main);
@@ -45,7 +39,14 @@ export default function CharacterCard({ character, onClick }: CharacterCardProps
         style={{ objectFit: 'contain' }}
       />
       <CardContent>
-        <Typography>
+        <Typography sx={{
+          fontWeight: 600,
+          color: '#FF007F',
+          textAlign: 'center',
+          borderBottom: '1px solid',
+          borderBottomColor: '#011c3a',
+        }}
+        >
           {`${character.name.first} ${character.name.middle ? `${character.name.middle} ` : ''}${character.name.last}`}
         </Typography>
       </CardContent>

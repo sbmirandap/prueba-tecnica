@@ -2,7 +2,7 @@ import React, {
   useState, useEffect,
 } from 'react';
 import {
-  Box, Grid, Typography,
+  Box, Grid, Typography, Dialog, DialogContent,
 } from '@mui/material';
 import FuturamaCharactersAPI from '../services/api';
 import { FuturamaCharacter } from '../types/types';
@@ -14,10 +14,8 @@ export default function Marketplace() {
   const { characters, error } = FuturamaCharactersAPI();
   const [filteredCharacters, setFilteredCharacters] = useState<FuturamaCharacter[]>([]);
   const [selectedCharacter, setSelectedCharacter] = useState<FuturamaCharacter | null>(null);
-  // Manejar el clic en una tarjeta de personaje
-  const handleCharacterClick = (character: FuturamaCharacter) => {
-    setSelectedCharacter(character); // Almacenar el personaje seleccionado
-  };
+  const [open, setOpen] = useState(false);
+
   if (error) {
     return (
       <Box sx={{ padding: 2 }}>
@@ -40,7 +38,13 @@ export default function Marketplace() {
     setFilteredCharacters(filtered);
   };
 
-  const handleDetailClose = () => {
+  const handleCharacterClick = (character: FuturamaCharacter) => {
+    setSelectedCharacter(character); // Almacenar el personaje seleccionado
+    setOpen(true); // Abrir el modal
+  };
+
+  const handleClose = () => {
+    setOpen(false); // Cerrar el modal
     setSelectedCharacter(null); // Limpiar la selección de personaje
   };
 
@@ -56,21 +60,24 @@ export default function Marketplace() {
   }
   return (
     <Box sx={{ padding: 2 }}>
-      {/* Si hay un personaje seleccionado, mostrar el detalle */}
-      {selectedCharacter ? (
-        <CharacterDetail character={selectedCharacter} onClose={handleDetailClose} />
-      ) : (
-        <>
-          <SearchAndSort characters={characters} onSearch={handleSearch} />
-          <Grid container spacing={3}>
-            {filteredCharacters.map((character) => (
-              <Grid item xs={12} sm={6} md={3} key={character.id}>
-                <CharacterCard character={character} onClick={handleCharacterClick} />
-              </Grid>
-            ))}
+      {/* Búsqueda y filtro */}
+      <SearchAndSort characters={characters} onSearch={handleSearch} />
+      <Grid container spacing={3}>
+        {filteredCharacters.map((character) => (
+          <Grid item xs={12} sm={6} md={3} key={character.id}>
+            <CharacterCard character={character} onClick={() => handleCharacterClick(character)} />
           </Grid>
-        </>
-      )}
+        ))}
+      </Grid>
+
+      {/* Dialog para mostrar el detalle del personaje */}
+      <Dialog open={open} onClose={handleClose} fullWidth maxWidth="md">
+        <DialogContent>
+          {selectedCharacter && (
+            <CharacterDetail character={selectedCharacter} onClose={handleClose} />
+          )}
+        </DialogContent>
+      </Dialog>
     </Box>
   );
 }
